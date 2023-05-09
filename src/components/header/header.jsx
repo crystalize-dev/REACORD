@@ -1,71 +1,85 @@
 import React, {useState} from 'react';
 import cl from "./header.module.css";
 import Icon from "../icon/Icon";
-import classNames from "classnames";
 import {getStatus, getStatusHint} from "../../utility/status";
+import classNames from "classnames";
 
 
-const Header = ({active}) => {
+const Header = ({active, type, filter, setFilter}) => {
     const [input, setInput] = useState('')
 
     return (
         <header className={cl.header}>
-            {active.id !== 0 ?
-                <div className={cl.friend}>
-                    <div className={cl.nameWrapper}>
-                        <Icon>alternate_email</Icon>
-                        {active.name}
-                        <div className={cl.statusWrapper}>
-                            <div className={getStatus(cl, active.status)}/>
+            {
+                type === 'friends' ?
+                    active.id !== 0 ?
+                            <div className={cl.friend}>
+                                <div className={cl.nameWrapper}>
+                                    <Icon>alternate_email</Icon>
+                                    {active.name}
+                                    <div className={cl.statusWrapper}>
+                                        <div className={getStatus(cl, active.status)}/>
 
-                            <div className={cl.statusHint}>{getStatusHint(active.status)}</div>
-                        </div>
-                    </div>
-                </div>
-                :
-                <div className={cl.main}>
-                    <div className={cl.firstMain}>
-                        <Icon>emoji_people</Icon>
-                        <p>Друзья</p>
-                    </div>
+                                        <div className={cl.statusHint}>{getStatusHint(active.status)}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            :
+                            <div className={cl.main}>
+                                <div className={cl.firstMain}>
+                                    <Icon>emoji_people</Icon>
+                                    <p>Друзья</p>
+                                </div>
 
-                    <hr/>
+                                <hr/>
 
-                    <button>В сети</button>
-                    <button>Все</button>
-                    <button>Ожидание</button>
-                    <button>Заблокированные</button>
-                    <button className={cl.addFriend}>Добавить в друзья</button>
-                </div>}
+                                <button className={filter === 'online' ? cl.active : null} onClick={() => setFilter('online')}>В сети</button>
+                                <button className={filter === 'all' ? cl.active : null} onClick={() => setFilter('all')}>Все</button>
+                                <button className={filter === 'sleep' ? cl.active : null} onClick={() => setFilter('sleep')}>Ожидание</button>
+                                <button className={filter === '' ? cl.active : null} onClick={() => setFilter('')}>Заблокированные</button>
+                                <button className={cl.addFriend}>Добавить в друзья</button>
+                            </div>
+                    :
+                    <>
+
+                    </>
+            }
 
             <div className={cl.staticWrapper}>
-                {active.id !== 0 &&
+                {(active.id !== 0 || type === 'groups') &&
                     <>
-                        <div className={cl.optionWrapper}>
-                            <Icon>call</Icon>
+                        {type !== 'groups' ?
+                            <>
+                                <div className={cl.optionWrapper}>
+                                    <Icon>call</Icon>
 
-                            <div className={cl.statusHint}>Начать голосовой звонок</div>
-                        </div>
-                        <div className={cl.optionWrapper}>
-                            <Icon>videocam</Icon>
+                                    <div className={cl.statusHint}>Начать голосовой звонок</div>
+                                </div>
+                                <div className={cl.optionWrapper}>
+                                    <Icon>videocam</Icon>
 
-                            <div className={cl.statusHint}>Начать видеозвонок</div>
-                        </div>
-                        <div className={cl.optionWrapper}>
-                            <Icon>push_pin</Icon>
+                                    <div className={cl.statusHint}>Начать видеозвонок</div>
+                                </div>
+                                <div className={cl.optionWrapper}>
+                                    <Icon>push_pin</Icon>
 
-                            <div className={cl.statusHint}>Закреплённые сообщения</div>
-                        </div>
-                        <div className={cl.optionWrapper}>
-                            <Icon>person_add</Icon>
+                                    <div className={cl.statusHint}>Закреплённые сообщения</div>
+                                </div>
+                                <div className={cl.optionWrapper}>
+                                    <Icon>person_add</Icon>
 
-                            <div className={cl.statusHint}>Добавить друзей в беседу</div>
-                        </div>
-                        <div className={cl.optionWrapper}>
-                            <Icon>account_circle</Icon>
+                                    <div className={cl.statusHint}>Добавить друзей в беседу</div>
+                                </div>
+                                <div className={cl.optionWrapper}>
+                                    <Icon>account_circle</Icon>
 
-                            <div className={cl.statusHint}>Скрыть профиль пользователя</div>
-                        </div>
+                                    <div className={cl.statusHint}>Скрыть профиль пользователя</div>
+                                </div>
+                            </> :
+                            <>
+
+                            </>}
+
                         <div className={cl.inputWrapper}>
                             <input placeholder={"Поиск"}
                                    value={input} onChange={(e) => setInput(e.target.value)}/>
@@ -74,7 +88,7 @@ const Header = ({active}) => {
                         </div>
                     </>}
 
-                {active.id === 0 &&
+                {(active.id === 0 && type === 'friends') &&
                     <>
                         <div className={classNames(cl.optionWrapper, cl.toDelete)}>
                             <Icon>chat_bubble</Icon>

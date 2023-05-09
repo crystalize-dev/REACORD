@@ -1,3 +1,5 @@
+import eugeneAvatar from "../img/randpics/eugene.png"
+
 export const friendsScheme = [
     {
         id: 1,
@@ -6,12 +8,20 @@ export const friendsScheme = [
         description: "Белый угнетатель",
         note: "Лучший",
         enterDate: "нояб. 24, 2017",
-        img: null,
+        img: eugeneAvatar,
         status: 'online',
         mutual: {
             friends: null,
             groups: 2,
         },
+        messages: [
+            {who: "me", message: "Даров!", date: 1683642105955},
+            {who: "Disket", message: "\n" +
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed est tincidunt, pulvinar diam eu, condimentum turpis. Morbi purus nibh, blandit sed nunc ut, tristique aliquam quam. Morbi ac viverra odio. Duis at sagittis sapien. Cras varius nisl ut pellentesque mollis. Aliquam a enim ornare, molestie nunc eu, imperdiet lectus. Ut venenatis elementum tempus. Etiam et placerat mi, sit amet ullamcorper ante. Nam quis consectetur orci. Nulla vitae tortor pellentesque, consectetur diam efficitur, sagittis magna. Proin faucibus, nulla ac aliquet mollis, sapien nisi commodo eros, quis fermentum metus augue commodo magna. Quisque at eros laoreet neque blandit mattis. Mauris ligula.",
+                date: 1683642105960
+            },
+        ],
+        activities: {name: 'Гремлены', channel: 'Канал для гремленов'}
     },
     {
         id: 2,
@@ -26,6 +36,8 @@ export const friendsScheme = [
             friends: 2,
             groups: 2,
         },
+        messages: [],
+        activities: {name: 'нони', channel: 'аниме'},
     },
     {
         id: 3,
@@ -40,6 +52,8 @@ export const friendsScheme = [
             friends: 1,
             groups: 2,
         },
+        messages: [],
+        activities: null,
     },
     {
         id: 4,
@@ -54,6 +68,8 @@ export const friendsScheme = [
             friends: null,
             groups: null,
         },
+        messages: [],
+        activities: null,
     },
     {
         id: 5,
@@ -68,5 +84,7 @@ export const friendsScheme = [
             friends: 1,
             groups: 1,
         },
+        messages: [],
+        activities: null,
     },
 ]

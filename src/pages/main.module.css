@@ -6,17 +6,6 @@
 
     overflow: hidden;
 }
-
-.content {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: var(--background-color-most-lighter);
-}
-
 .headerShadow {
     position: absolute;
     right: 0;
@@ -30,13 +19,12 @@
     pointer-events: none;
 }
 
-.messageAreaWrapper {
+.content {
+    display: flex;
+    flex-direction: column;
+
     width: 100%;
     height: 100%;
 
-    display: flex;
-}
-.messageArea {
-    flex-grow: 1;
-    height: 100%;
+    background-color: var(--background-color-most-lighter);
 }

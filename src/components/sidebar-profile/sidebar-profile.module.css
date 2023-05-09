@@ -33,6 +33,11 @@
     background-color: var(--main-color);
     outline: 5px solid var(--background-color-most-darker);
 }
+.img {
+    width: 100%!important;
+    height: 100%!important;
+    border-radius: 100%;
+}
 .imgWrapper img {
     width: 60%;
 }
@@ -163,4 +168,10 @@
     font-size: 14px;
 
     cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .sidebar {
+        display: none;
+    }
 }

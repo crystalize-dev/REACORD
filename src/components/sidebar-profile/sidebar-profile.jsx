@@ -11,7 +11,7 @@ const SidebarProfile = ({active}) => {
             <div className={cl.colorArea}/>
 
             <div className={cl.imgWrapper}>
-               <img alt={""} src={active.img ? active.img : logo}/>
+               <img alt={""} src={active.img ? active.img : logo} className={active.img ? cl.img : null}/>
 
                 <div className={getStatus(cl, active.status)}/>
             </div>

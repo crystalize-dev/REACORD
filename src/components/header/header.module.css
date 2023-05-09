@@ -12,6 +12,7 @@
     min-height: 50px;
 
     background-color: var(--background-color-most-lighter);
+    user-select: none;
 }
 
 .friend {
@@ -81,8 +82,7 @@
 }
 .statusHint {
     position: absolute;
-    top: 100%;
-    bottom: -50%;
+    bottom: -80%;
 
     display: none;
 
@@ -144,7 +144,7 @@
     border:none;
     outline: none;
 
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: var(--background-color-most-darker);
     color: white;
 
@@ -189,11 +189,15 @@
     border-radius: 3px;
     padding: 2px 8px;
 
-    background-color: var(--background-color-most-lighter-add);
+    background-color: transparent;
     color: white;
     font-weight: 500;
 
     cursor: pointer;
+}
+.active {
+    background-color: var(--background-color-most-lighter-add) !important;
+    cursor: unset !important;
 }
 .main button:hover {
     background-color: var(--background-color-most-lighter-add-darker);

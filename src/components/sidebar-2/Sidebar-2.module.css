@@ -193,6 +193,12 @@
 
     background-color: var(--main-color);
 }
+.img {
+    width: 100% !important;
+    height: 100% !important;
+
+    border-radius: 50%;
+}
 .status {
     position: absolute;
     right: 0;
