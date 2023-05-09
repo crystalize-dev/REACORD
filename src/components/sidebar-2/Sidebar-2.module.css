@@ -250,7 +250,7 @@
     min-height: 54px;
 
     background-color: var(--background-color-most-darker-add);
-    z-index: 9999999;
+    z-index: 20000;
 }
 .meBlock img {
     width: 100%;

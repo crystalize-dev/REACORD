@@ -2,32 +2,11 @@ import React, {useState} from 'react';
 import cl from "./header.module.css";
 import Icon from "../icon/Icon";
 import classNames from "classnames";
+import {getStatus, getStatusHint} from "../../utility/status";
 
 
 const Header = ({active}) => {
     const [input, setInput] = useState('')
-
-    const getStatus = (status) => {
-        switch (status) {
-            case 'online':
-                return classNames(cl.status, cl.online)
-            case 'sleep':
-                return classNames(cl.status, cl.sleep)
-            default:
-                return classNames(cl.status, cl.offline)
-        }
-    }
-
-    const getStatusHint = (status) => {
-        switch (status) {
-            case 'online':
-                return 'В сети'
-            case 'sleep':
-                return 'Отошёл'
-            default:
-                return 'Не в сети'
-        }
-    }
 
     return (
         <header className={cl.header}>
@@ -37,7 +16,7 @@ const Header = ({active}) => {
                         <Icon>alternate_email</Icon>
                         {active.name}
                         <div className={cl.statusWrapper}>
-                            <div className={getStatus(active.status)}/>
+                            <div className={getStatus(cl, active.status)}/>
 
                             <div className={cl.statusHint}>{getStatusHint(active.status)}</div>
                         </div>

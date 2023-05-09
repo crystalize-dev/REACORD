@@ -5,22 +5,12 @@ import Icon from "../icon/Icon";
 import classNames from "classnames";
 import logo from "../../img/logoRaw.png"
 import me from '../../img/me.jpg'
+import {getStatus} from "../../utility/status";
 
 
 const Sidebar2 = ({main, friends, setFriends, active, setActive}) => {
     const [mic, setMic] = useState(true)
     const [head, setHead] = useState(true)
-
-    const getStatus = (status) => {
-        switch (status) {
-            case 'online':
-                return classNames(cl.status, cl.online)
-            case 'sleep':
-                return classNames(cl.status, cl.sleep)
-            default:
-                return classNames(cl.status, cl.offline)
-        }
-    }
 
     const copyText = () => {
         let copyTextarea = document.createElement("textarea");
@@ -61,7 +51,7 @@ const Sidebar2 = ({main, friends, setFriends, active, setActive}) => {
                      onClick={() => setActive(friend)}>
                     <div className={cl.imgWrapper}>
                         <img alt={""} src={friend.img ? friend.img : logo} draggable={"false"}/>
-                        <div className={getStatus(friend.status)}/>
+                        <div className={getStatus(cl, friend.status)}/>
                     </div>
 
                     <p>{friend.name}</p>

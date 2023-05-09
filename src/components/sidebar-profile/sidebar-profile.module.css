@@ -1,0 +1,166 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 340px;
+    min-width: 340px;
+
+    background-color: var(--background-color-most-darker);
+}
+.colorArea {
+    height: 120px;
+    min-height: 120px;
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+.imgWrapper {
+    position: relative;
+    left: 20px;
+    top: -45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 76px;
+    height: 76px;
+    min-width: 76px;
+    min-height: 76px;
+
+    border-radius: 50%;
+    background-color: var(--main-color);
+    outline: 5px solid var(--background-color-most-darker);
+}
+.imgWrapper img {
+    width: 60%;
+}
+
+.status {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+}
+.status:hover .statusHint {
+    display: unset;
+}
+.offline {
+    background-color: var(--background-color-most-darker);
+    border: 4px solid #7d818c;
+    outline: 5px solid var(--background-color-most-darker);
+}
+.online {
+    background-color: var(--second-color);
+    outline: 5px solid var(--background-color-most-darker);
+}
+.sleep {
+    background-color: var(--offline-color);
+    outline: 5px solid var(--background-color-most-darker);
+}
+.statusHint::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: -16px;
+
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-bottom: 8px solid var(--hint-color);
+}
+.statusHint {
+    position: absolute;
+    top: 100%;
+    bottom: -50%;
+
+    display: none;
+
+    width: fit-content;
+    height: fit-content;
+
+    background-color: var(--hint-color);
+
+    padding: 5px 8px;
+    color: var(--darker-white-font-color);
+
+    white-space: nowrap;
+    font-size: 14px;
+    border-radius: 4px;
+
+    z-index: 999999999;
+}
+
+.infoCard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 90%;
+    align-self: center;
+
+    padding: 15px 10px;
+
+    background-color: var(--hint-color);
+    color: var(--darker-white-font-color);
+
+    border-radius: 8px;
+}
+.infoCard h1 {
+    color: white;
+    font-size: 20px;
+}
+.infoCard h1 span {
+    font-weight: normal;
+}
+.infoCard hr {
+    align-self: center;
+    width: 333.33%;
+    border: 1px solid var(--background-color-darker);
+    transform: scale(0.3);
+}
+.infoCard h2 {
+    font-size: 11px;
+    color: white;
+}
+.infoCard p {
+    font-size: 13px;
+}
+
+.addInfo {
+    margin-top: 10px;
+
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    gap: 10px;
+
+    padding: 10px 10px;
+
+    background-color: var(--hint-color);
+    border-radius: 8px;
+}
+.addInfo hr {
+    align-self: center;
+    width: calc(333.33% + 60px);
+    border: 1px solid var(--background-color-darker);
+    transform: scale(0.3);
+}
+.mutualElem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--darker-white-font-color);
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+
+    cursor: pointer;
+}

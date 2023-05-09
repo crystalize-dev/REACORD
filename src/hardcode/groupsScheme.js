@@ -2,7 +2,7 @@ import pic1 from "../img/randpics/randpic1.png"
 
 
 
-export const chats = [
+export const groupsScheme = [
     {
         id: 1,
         name: 'Троечники из Калифорнии',

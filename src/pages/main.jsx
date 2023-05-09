@@ -3,8 +3,9 @@ import cl from "./main.module.css";
 import Sidebar1 from "../components/sidebar-1/Sidebar-1";
 import Sidebar2 from "../components/sidebar-2/Sidebar-2";
 import Header from "../components/header/header";
-import {chats} from "../hardcode/chats";
-import {friendsSchema} from "../hardcode/friends";
+import {groupsScheme} from "../hardcode/groupsScheme";
+import {friendsScheme} from "../hardcode/friendsScheme";
+import SidebarProfile from "../components/sidebar-profile/sidebar-profile";
 
 
 
@@ -19,11 +20,11 @@ const Main = () => {
         fullId: '#1314'
     }
 
-    const [groups, setGroups] = useState(chats)
+    const [groups, setGroups] = useState(groupsScheme)
     const [activeGroup, setActiveGroup] = useState(mainPage) // ChatsScheme
 
-    const [friends, setFriends] = useState(friendsSchema)
-    const [activeChat, setActiveChat] = useState(me) // friendsScheme
+    const [friends, setFriends] = useState(friendsScheme)
+    const [activeFriend, setActiveFriend] = useState(me) // friendsScheme
 
 
     return (
@@ -35,11 +36,19 @@ const Main = () => {
                       main={mainPage}/>
 
             <Sidebar2 main={me}
-                      active={activeChat} setActive={setActiveChat}
+                      active={activeFriend} setActive={setActiveFriend}
                       friends={friends} setFriends={setFriends}/>
 
             <div className={cl.content}>
-                <Header active={activeChat}/>
+                <Header active={activeFriend}/>
+
+                <div className={cl.messageAreaWrapper}>
+                    <div className={cl.messageArea}>
+
+                    </div>
+
+                    {activeFriend.id !== me.id && <SidebarProfile active={activeFriend}/>}
+                </div>
             </div>
         </div>
     );
