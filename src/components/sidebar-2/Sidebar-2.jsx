@@ -32,8 +32,6 @@ const Sidebar2 = ({main, friends, setFriends, active, setActive}) => {
         copyTextarea.select();
         document.execCommand("copy");
         document.body.removeChild(copyTextarea);
-
-        console.log('copied!')
     }
 
     return (

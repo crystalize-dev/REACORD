@@ -1,5 +1,4 @@
-
-import pic2 from "../img/randpics/randpic2.png"
+import pic1 from "../img/randpics/randpic1.png"
 
 
 
@@ -17,6 +16,6 @@ export const chats = [
     {
         id: 3,
         name: 'Гремлены',
-        img: pic2
+        img: pic1
     },
 ]
