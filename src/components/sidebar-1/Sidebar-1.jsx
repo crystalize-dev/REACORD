@@ -1,22 +1,10 @@
-import React, {useState} from 'react';
 import cl from "./Sidebar-1.module.css";
 import logo from "../../img/logoRaw.png"
 import classNames from "classnames";
-import {chats} from "../../hardcode/chats";
 import Icon from "../icon/Icon";
 
 
-const Sidebar1 = () => {
-
-    const main = {
-        id: 0,
-        name: 'Личные сообщения',
-        img: null
-    }
-
-    const [groups, setGroups] = useState(chats)
-    const [active, setActive] = useState(main)
-
+const Sidebar1 = ({groups, setGroups, active, setActive, main}) => {
     const getClassForElem = (group) => {
         let result = [cl.imgWrapper]
 

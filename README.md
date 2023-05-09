@@ -1,3 +1,4 @@
 # ToDo:
-- span hint
-- 
+- Sidebar profile (right)
+- message Area
+- Functionality

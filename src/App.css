@@ -5,15 +5,24 @@
   font-family: 'Noto Sans', sans-serif;
 }
 
+img, button, a {
+  user-select: none;
+}
+
 #root {
   --background-color-most-darker-add: #232429;
   --background-color-most-darker: #1e1f23;
   --background-color-darker: #2b2d32;
   --background-color-lighter: #313339;
-  --background-color-most-lighter: #3f4149;
-  --background-color-most-lighter-add: #36383f;
+  --background-color-most-lighter: #313339;
+  --background-color-most-lighter-add: #42434b;
+  --background-color-most-lighter-add-darker: #393a41;
   --main-color: #5764f1;
   --second-color: #23a459;
+  --offline-color: #eda420;
+  --red-color: #d0504f;
 
   --inactive-color: #939aa4;
+  --hint-color: #111215;
+  --darker-white-font-color: #cacbd0;
 }

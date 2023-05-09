@@ -1,6 +1,239 @@
 .header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+    gap: 10px;
+
     width: 100%;
     height: 48px;
 
     background-color: var(--background-color-most-lighter);
+}
+
+.friend {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    color: var(--darker-white-font-color);
+}
+
+.nameWrapper {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 100%;
+    gap: 10px;
+}
+.statusWrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    width: fit-content;
+}
+.statusWrapper:hover .statusHint {
+    display: unset;
+}
+.status {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+}
+.offline {
+    background-color: var(--background-color-most-lighter);
+    outline: 3px solid #7d818c;
+}
+.online {
+    width: 10px;
+    height: 10px;
+    background-color: var(--second-color);
+}
+.sleep {
+    width: 10px;
+    height: 10px;
+    background-color: var(--offline-color);
+}
+.statusHint::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: -16px;
+
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-bottom: 8px solid var(--hint-color);
+}
+.statusHint {
+    position: absolute;
+    bottom: -50%;
+
+    display: none;
+
+    transform: translateX(-40%);
+
+    width: fit-content;
+    height: fit-content;
+
+    background-color: var(--hint-color);
+
+    padding: 5px 8px;
+    color: var(--darker-white-font-color);
+
+    white-space: nowrap;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.optionWrapper:nth-child(2) {
+    margin-left: auto;
+}
+.optionWrapper:hover .statusHint {
+    display: unset;
+}
+.optionWrapper .statusHint {
+    bottom: -55%;
+    transform: translateX(-44%);
+}
+.optionWrapper {
+    position: relative;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.optionWrapper span {
+    color: var(--darker-white-font-color);
+    cursor: pointer;
+}
+.optionWrapper:hover span {
+    color: white;
+}
+
+.inputWrapper {
+    position: relative;
+
+    width: fit-content;
+    height: 50%;
+}
+.inputWrapper input:focus {
+    width: 230px;
+}
+.inputWrapper input {
+    width: 130px;
+    height: 100%;
+
+    padding: 5px 30px 5px 5px;
+
+    border:none;
+    outline: none;
+
+    border-radius: 3px;
+    background-color: var(--background-color-most-darker);
+    color: white;
+
+    transition: all 0.2s ease 0s;
+}
+.inputWrapper input::placeholder {
+    color: var(--inactive-color);
+}
+.inputWrapper span {
+    position: absolute;
+    right: 2px;
+
+    transform: scale(0.7);
+    color: var(--inactive-color);
+    pointer-events: none;
+}
+
+
+.main {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.firstMain {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--inactive-color);
+}
+.firstMain p {
+    color: white;
+}
+.main button {
+    white-space: nowrap;
+    border: none;
+    border-radius: 3px;
+    padding: 2px 8px;
+
+    background-color: var(--background-color-most-lighter-add);
+    color: white;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+.main button:hover {
+    background-color: var(--background-color-most-lighter-add-darker);
+}
+.addFriend {
+    background-color: #247f46 !important;
+}
+
+.staticWrapper:before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    transform: translateX(-100%);
+
+    height: 100%;
+    width: 50px;
+
+    background: linear-gradient(270deg, var(--background-color-most-lighter) 40%, transparent);
+    z-index: 9998;
+}
+.staticWrapper {
+    position: sticky;
+    right: -1px;
+
+    padding-right: 10px;
+
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+    width: fit-content;
+    align-items: center;
+    gap: 20px;
+
+    background: var(--background-color-most-lighter);
+    z-index: 9999;
+}
+.header hr {
+    height: 500%;
+    border: 1px solid var(--inactive-color);
+    transform: scale(0.1);
+}
+.header > span {
+    color: var(--darker-white-font-color);
+}
+
+@media (max-width: 940px) {
+    .toDelete {
+        display: none;
+    }
 }
