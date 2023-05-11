@@ -6,8 +6,10 @@ export const getStatus = (cl, status) => {
             return classNames(cl.status, cl.online)
         case 'sleep':
             return classNames(cl.status, cl.sleep)
-        default:
+        case 'offline':
             return classNames(cl.status, cl.offline)
+        default:
+            return classNames(cl.status)
     }
 }
 

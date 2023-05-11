@@ -68,37 +68,6 @@
     background-color: var(--offline-color);
     outline: 5px solid var(--background-color-most-darker);
 }
-.statusHint::before {
-    position: absolute;
-    content: "";
-    left: 50%;
-    top: -16px;
-
-    transform: translateX(-50%);
-    border: 8px solid transparent;
-    border-bottom: 8px solid var(--hint-color);
-}
-.statusHint {
-    position: absolute;
-    top: 100%;
-    bottom: -50%;
-
-    display: none;
-
-    width: fit-content;
-    height: fit-content;
-
-    background-color: var(--hint-color);
-
-    padding: 5px 8px;
-    color: var(--darker-white-font-color);
-
-    white-space: nowrap;
-    font-size: 14px;
-    border-radius: 4px;
-
-    z-index: 999999999;
-}
 
 .infoCard {
     display: flex;

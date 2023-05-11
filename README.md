@@ -1,6 +1,5 @@
 # ToDo:
-- message Area
-
+- randColors for friends
 
 - sidebar-2 for groups
 - header for groups
@@ -8,4 +7,3 @@
 
 
 - Functionality for all
-- modal for sidebar-2 input

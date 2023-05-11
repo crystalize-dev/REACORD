@@ -1,0 +1,114 @@
+.wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 4px 4px 0 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+.messageArea {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding: 55px 4px 20px 0;
+
+    width: 100%;
+    height: calc(100% - 70px);
+    min-height: calc(100% - 70px);
+    max-height: calc(100% - 70px);
+}
+.messageArea::-webkit-scrollbar {
+    width: 8px;
+
+    background: #2b2d32;
+    border-radius: 10px;
+}
+.messageArea::-webkit-scrollbar-thumb {
+    background: var(--hint-color);
+    border-radius: 10px;
+}
+
+.inputArea {
+    position: sticky;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    height: 70px;
+    min-height: 70px;
+
+    padding: 0 20px;
+
+    background-color: var(--background-color-most-lighter);
+}
+.inputWrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+}
+.inputWrapper input {
+    padding: 0 120px 2px 60px;
+
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 7px;
+
+    background-color: #383a40;
+    color: white;
+    font-size: 14px;
+}
+.inputWrapper input::placeholder {
+    color: #666872;
+}
+.inputWrapper span {
+    position: absolute;
+
+    color: #bebfc4;
+    font-variation-settings: 'wght' 400, 'FILL' 3;
+    cursor: pointer;
+}
+.inputWrapper span:hover {
+    color: var(--darker-white-font-color);
+}
+.inputWrapper span:nth-child(1) {
+    left: 20px
+}
+.inputWrapper span:nth-child(5) {
+    right: 10px;
+}
+.inputWrapper span:nth-child(4) {
+     right: 45px;
+ }
+.inputWrapper span:nth-child(3) {
+    right: 80px;
+}
+
+@media (max-width: 1200px) {
+    .inputWrapper span:nth-child(5), .inputWrapper span:nth-child(4), .inputWrapper span:nth-child(3), .inputWrapper span:nth-child(1) {
+        display: none;
+    }
+    .inputWrapper input {
+        padding: 15px;
+    }
+
+    .onHover {
+        display: none !important;
+    }
+}

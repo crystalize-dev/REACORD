@@ -8,7 +8,7 @@ const Sidebar2 = ({main, friends, active, setActive, type, deleteFriend}) => {
     return (
         <div className={cl.sidebar}>
             {type === 'friends' ?
-                <ForFriends friends={friends} active={active} setActive={setActive} main={main} deleteFriend={deleteFriend}/>
+                <ForFriends friendsSchema={friends} active={active} setActive={setActive} main={main} deleteFriend={deleteFriend}/>
                 :
                 <ForGroups />
             }

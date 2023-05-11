@@ -1,4 +1,4 @@
-import pic1 from "../img/randpics/randpic1.png"
+import pic1 from "../img/randpics/groups/group1.png"
 
 
 export const groupsScheme = [

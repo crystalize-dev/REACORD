@@ -27,7 +27,8 @@ const Main = () => {
     const [friends, setFriends] = useState(friendsScheme)
     const [activeFriend, setActiveFriend] = useState(me) // friendsScheme
 
-    const [filter, setFilter] = useState('all')
+    const [filter, setFilter] = useState('all') // SearchOnlineFriends
+    const [msgFilter, setMsgFilter] = useState("") //Search messages
 
     const deleteFriend = (id) => {
         setFriends([...friends.filter(friend => friend.id !== id)])
@@ -47,10 +48,15 @@ const Main = () => {
                       deleteFriend={deleteFriend}/>
 
             <div className={cl.content}>
-                <Header active={activeFriend} type={activeGroup.id === 0 ? 'friends' : 'groups'} filter={filter} setFilter={setFilter}/>
+                <Header active={activeFriend} type={activeGroup.id === 0 ? 'friends' : 'groups'}
+                        filter={filter} setFilter={setFilter}
+                        msgFilter={msgFilter} setMsgFilter={setMsgFilter}/>
 
                 {activeGroup.id === 0 ?
-                    <Friends friends={friends} activeFriend={activeFriend} groups={groups} me={me} filter={filter}/>
+                    <Friends friends={friends} activeFriend={activeFriend}
+                             groups={groups}
+                             me={me}
+                             filter={filter} msgFilter={msgFilter}/>
                     :
                     <Groups/>
                 }

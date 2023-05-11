@@ -1,13 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import cl from "./header.module.css";
 import Icon from "../icon/Icon";
 import {getStatus, getStatusHint} from "../../utility/status";
 import classNames from "classnames";
 
 
-const Header = ({active, type, filter, setFilter}) => {
-    const [input, setInput] = useState('')
-
+const Header = ({active, type, filter, setFilter, msgFilter, setMsgFilter}) => {
     return (
         <header className={cl.header}>
             {
@@ -82,7 +80,7 @@ const Header = ({active, type, filter, setFilter}) => {
 
                         <div className={cl.inputWrapper}>
                             <input placeholder={"Поиск"}
-                                   value={input} onChange={(e) => setInput(e.target.value)}/>
+                                   value={msgFilter} onChange={(e) => setMsgFilter(e.target.value)}/>
 
                             <Icon>search</Icon>
                         </div>

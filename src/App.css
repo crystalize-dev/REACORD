@@ -5,6 +5,10 @@
   font-family: 'Noto Sans', sans-serif;
 }
 
+html::-webkit-scrollbar {
+  width: 0;
+}
+
 img, button, a {
   user-select: none;
 }
@@ -20,9 +24,11 @@ img, button, a {
   --main-color: #5764f1;
   --second-color: #23a459;
   --offline-color: #eda420;
-  --red-color: #d0504f;
+  --red-color: #f03f42;
 
   --inactive-color: #939aa4;
   --hint-color: #111215;
   --darker-white-font-color: #cacbd0;
+
+  overflow: hidden;
 }

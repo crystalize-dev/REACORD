@@ -1,4 +1,7 @@
-import eugeneAvatar from "../img/randpics/eugene.png"
+import eugeneAvatar from "../img/randpics/avatars/eugene.png";
+import artem from "../img/randpics/avatars/artem.png";
+import kirill from "../img/randpics/avatars/kirill.jpg";
+
 
 export const friendsScheme = [
     {
@@ -15,8 +18,8 @@ export const friendsScheme = [
             groups: 2,
         },
         messages: [
-            {who: "me", message: "Даров!", date: 1683642105955},
-            {who: "Disket", message: "\n" +
+            {who: "me", text: "Даров!", date: 1683642105955},
+            {who: "Disket", text: "\n" +
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed est tincidunt, pulvinar diam eu, condimentum turpis. Morbi purus nibh, blandit sed nunc ut, tristique aliquam quam. Morbi ac viverra odio. Duis at sagittis sapien. Cras varius nisl ut pellentesque mollis. Aliquam a enim ornare, molestie nunc eu, imperdiet lectus. Ut venenatis elementum tempus. Etiam et placerat mi, sit amet ullamcorper ante. Nam quis consectetur orci. Nulla vitae tortor pellentesque, consectetur diam efficitur, sagittis magna. Proin faucibus, nulla ac aliquet mollis, sapien nisi commodo eros, quis fermentum metus augue commodo magna. Quisque at eros laoreet neque blandit mattis. Mauris ligula.",
                 date: 1683642105960
             },
@@ -30,7 +33,7 @@ export const friendsScheme = [
         description: null,
         note: "Черножопый",
         enterDate: "янв. 11, 2018",
-        img: null,
+        img: kirill,
         status: 'sleep',
         mutual: {
             friends: 2,
@@ -62,7 +65,7 @@ export const friendsScheme = [
         description: null,
         note: "Черножопый",
         enterDate: "нояб. 27, 2021",
-        img: null,
+        img: artem,
         status: 'offline',
         mutual: {
             friends: null,

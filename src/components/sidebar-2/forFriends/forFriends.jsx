@@ -1,14 +1,20 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import classNames from "classnames";
 import cl from "../Sidebar-2.module.css";
 import Icon from "../../icon/Icon";
-import logo from "../../../img/logoRaw.png";
-import {getStatus} from "../../../utility/status";
-import me from "../../../img/randpics/me.jpg";
+import me from "../../../img/randpics/avatars/me.jpg";
+import ImgWithStatus from "../../imgWithStatus/imgWithStatus";
 
-const ForFriends = ({active, main, setActive, friends, deleteFriend}) => {
+const ForFriends = ({active, main, setActive, friendsSchema, deleteFriend}) => {
+    const [friends, setFriends] = useState(friendsSchema)
     const [mic, setMic] = useState(true)
     const [head, setHead] = useState(true)
+    const [filter, setFilter] = useState('')
+
+    useEffect(() => {
+        if (filter) setFriends([...friends.filter(friend => friend.name.toLowerCase().includes(filter.toLowerCase()))])
+        else setFriends(friendsSchema)
+    }, [filter, friendsSchema])
 
     const copyText = () => {
         let copyTextarea = document.createElement("textarea");
@@ -24,7 +30,7 @@ const ForFriends = ({active, main, setActive, friends, deleteFriend}) => {
 
     return (
         <>
-            <input placeholder={'Найти или начать беседу'}/>
+            <input value={filter} onChange={(e) => setFilter(e.target.value)} placeholder={'Найти или начать беседу'}/>
 
             <div className={active.id === main.id ? classNames(cl.special, cl.current) : cl.special}
                  onClick={() => setActive(main)}>
@@ -47,10 +53,7 @@ const ForFriends = ({active, main, setActive, friends, deleteFriend}) => {
                 <div key={friend.id}
                      className={friend.id === active.id ? classNames(cl.friendElem, cl.active) : cl.friendElem}
                      onClick={() => setActive(friend)}>
-                    <div className={cl.imgWrapper}>
-                        <img alt={""} src={friend.img ? friend.img : logo} draggable={"false"} className={friend.img ? cl.img : null}/>
-                        <div className={getStatus(cl, friend.status)}/>
-                    </div>
+                    <ImgWithStatus status={friend.status} src={friend.img} size={30}/>
 
                     <p>{friend.name}</p>
                     <Icon onClick={() => deleteFriend(friend.id)}>close</Icon>
