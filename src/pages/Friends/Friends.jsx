@@ -6,17 +6,23 @@ import OnlineFriends from "./onlineFriends/OnlineFriends";
 import MessageArea from "./messageArea/messageArea";
 
 
-const Friends = ({me, groups, friends, activeFriend, filter, msgFilter}) => {
+const Friends = ({me, groups, friends, activeFriend, filter, msgFilter, setActiveFriend, setActiveGroup}) => {
     return (
         <div className={cl.messageAreaWrapper}>
                 {activeFriend.id === me.id ?
                     <>
-                        <OnlineFriends filter={filter} friends={friends} groups={groups}/>
-                        <SidebarActivity friends={friends} groups={groups}/>
+                        <OnlineFriends filter={filter}
+                                       friends={friends} groups={groups}
+                                       setActiveFriend={setActiveFriend}/>
+
+                        <SidebarActivity friends={friends} groups={groups}
+                                         setActiveFriend={setActiveFriend} setActiveGroup={setActiveGroup}/>
                     </>
                     :
                     <>
-                        <MessageArea msgFilter={msgFilter} activeFriend={activeFriend}/>
+                        <MessageArea msgFilter={msgFilter}
+                                     activeFriend={activeFriend}/>
+
                         <SidebarProfile active={activeFriend}/>
                     </>}
             </div>

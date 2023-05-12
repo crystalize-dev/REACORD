@@ -5,7 +5,7 @@ import {getStatus} from "../../utility/status";
 import classNames from "classnames";
 
 
-const ImgWithStatus = ({src, status, altText, isGroup, size=30, statSize=10, className}) => {
+const ImgWithStatus = ({src, status, altText, isGroup, size=30, statSize=10, className, color}) => {
     const getClassForGroup = () => {
         let result = [cl.imgWrapper, className];
 
@@ -16,7 +16,7 @@ const ImgWithStatus = ({src, status, altText, isGroup, size=30, statSize=10, cla
     }
 
     return (
-        <div className={(isGroup) ? getClassForGroup() : classNames(cl.imgWrapper, className)} style={{width: size, minWidth: size, height: size, minHeight: size}}>
+        <div className={(isGroup) ? getClassForGroup() : classNames(cl.imgWrapper, className)} style={{width: size, minWidth: size, height: size, minHeight: size, backgroundColor: color}}>
             {(altText && !src) ?
                 altText :
                 <img alt={""} src={src ? src : logo} draggable={false} className={src ? cl.img : null}/>}

@@ -6,7 +6,7 @@ import Icon from "../../../components/icon/Icon";
 import ImgWithStatus from "../../../components/imgWithStatus/imgWithStatus";
 
 
-const OnlineFriends = ({filter, friends, groups}) => {
+const OnlineFriends = ({filter, friends, groups, setActiveFriend}) => {
     const [onlineFriends, setOnlineFriend] = useState([])
     const [onlineFriendsToView, setOnlineFriendsToView] = useState([...onlineFriends])
     const [search, setSearch] = useState('')
@@ -37,19 +37,11 @@ const OnlineFriends = ({filter, friends, groups}) => {
 
             if (condition.length === 1) {
                 if (friend.status === condition[0])
-                    result.push({
-                        name: friend.name,
-                        fullId: friend.fullId,
-                        img: friend.img,
-                        status: friend.status,
+                    result.push({...friend,
                         statusHint: getStatusHint(friend.status)
                     })
             } else if (friend.status === condition[0] || friend.status === condition[1])
-                result.push({
-                    name: friend.name,
-                    fullId: friend.fullId,
-                    img: friend.img,
-                    status: friend.status,
+                result.push({...friend,
                     statusHint: getStatusHint(friend.status)
                 })
         })
@@ -84,8 +76,8 @@ const OnlineFriends = ({filter, friends, groups}) => {
                         <hr/>
                         {onlineFriendsToView.map(friend => {
                             if (friend.status === 'online') return (
-                                <div key={friend.name} className={cl.friendElem}>
-                                    <ImgWithStatus status={friend.status} src={friend.img} size={30}/>
+                                <div key={friend.name} className={cl.friendElem} onClick={() => setActiveFriend(friend)}>
+                                    <ImgWithStatus status={friend.status} src={friend.img} size={30} color={friend.color}/>
 
                                     <div className={cl.nameWrapper}>
                                         <h1>{friend.name} <span>{friend.fullId}</span></h1>
@@ -116,8 +108,8 @@ const OnlineFriends = ({filter, friends, groups}) => {
                         <hr/>
                         {onlineFriendsToView.map(friend => {
                             if (friend.status === 'sleep') return (
-                                <div key={friend.name} className={cl.friendElem}>
-                                    <ImgWithStatus status={friend.status} src={friend.img} size={30}/>
+                                <div key={friend.name} className={cl.friendElem} onClick={() => setActiveFriend(friend)}>
+                                    <ImgWithStatus status={friend.status} src={friend.img} size={30} color={friend.color}/>
 
                                     <div className={cl.nameWrapper}>
                                         <h1>{friend.name} <span>{friend.fullId}</span></h1>

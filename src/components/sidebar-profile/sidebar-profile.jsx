@@ -8,9 +8,9 @@ import Icon from "../icon/Icon";
 const SidebarProfile = ({active}) => {
     return (
         <div className={cl.sidebar}>
-            <div className={cl.colorArea}/>
+            <div className={cl.colorArea} style={{backgroundColor: active.color}}/>
 
-            <div className={cl.imgWrapper}>
+            <div className={cl.imgWrapper} style={{backgroundColor: active.color}}>
                <img alt={""} src={active.img ? active.img : logo} className={active.img ? cl.img : null}/>
 
                 <div className={getStatus(cl, active.status)}/>

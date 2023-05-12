@@ -7,7 +7,8 @@ export const groupsScheme = [
         name: 'Троечники из Калифорнии',
         img: null,
         channels: [
-            {name: 'Оcновной', members: []}
+            {id: 1, name: 'оcновной', members: [], type: "text"},
+            {id: 2, name: 'Оcновной', members: [], type: "voice"}
         ]
     },
     {
@@ -15,9 +16,11 @@ export const groupsScheme = [
         name: 'нони',
         img: null,
         channels: [
-            {name: "аниме", members: [4]},
-            {name: "Doters", members: []},
-            {name: "афк", members: []},
+            {id: 1, name: "аниме", members: [4], type: "voice"},
+            {id: 2, name: "Doters", members: [], type: "voice"},
+            {id: 3, name: "афк", members: [], type: "voice"},
+            {id: 4, name: "main", members: [], type: "text"},
+            {id: 5, name: "writing", members: [], type: "text"},
         ]
     },
     {
@@ -25,8 +28,9 @@ export const groupsScheme = [
         name: 'Гремлены',
         img: pic1,
         channels: [
-            {name: "Канал для гремленов", members: [1]},
-            {name: "Чёрный выход", members: []},
+            {id: 1, name: "Канал для гремленов", members: [1], type: "voice"},
+            {id: 2, name: "Чёрный выход", members: [], type: "voice"},
+            {id: 3, name: "крутой-текст", members: [], type: "text"},
         ]
     },
 ]

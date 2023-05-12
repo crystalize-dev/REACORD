@@ -3,7 +3,7 @@ import cl from "./sidebar-activity.module.css";
 import ImgWithStatus from "../imgWithStatus/imgWithStatus";
 
 
-const SidebarActivity = ({friends, groups}) => {
+const SidebarActivity = ({friends, groups, setActiveFriend, setActiveGroup}) => {
     const [activities, setActivities] = useState([])
 
     useEffect(() => {
@@ -17,11 +17,8 @@ const SidebarActivity = ({friends, groups}) => {
                 let resultChannel = resultGroup.channels.filter(channel => channel.name === friend.activities.channel)[0]
 
                 let activitySchema = {
-                    friend: friend.name,
-                    img: friend.img,
-                    status: friend.status,
-                    groupImg: resultGroup.img,
-                    groupName: resultGroup.name,
+                    friend: friend,
+                    group: resultGroup,
                     channel: resultChannel,
                 }
 
@@ -46,25 +43,25 @@ const SidebarActivity = ({friends, groups}) => {
                 <>
                     <div className={cl.activities}>
                         {activities.map(activity =>
-                            <div key={activity.friend} className={cl.activityElem}>
-                                <div key={activity.friend} className={cl.whoWrapper}>
-                                    <ImgWithStatus src={activity.img} status={activity.status} size={30}/>
+                            <div key={activity.friend.id} className={cl.activityElem}>
+                                <div className={cl.whoWrapper} onClick={() => setActiveFriend(activity.friend)}>
+                                    <ImgWithStatus src={activity.friend.img} status={activity.friend.status} size={30}/>
 
                                     <div className={cl.namingWrapper}>
-                                        <h1>{activity.friend}</h1>
+                                        <h1>{activity.friend.name}</h1>
                                         <p>В голосовом канале</p>
                                     </div>
                                 </div>
-                                <div key={activity.groupName} className={cl.groupWrapper}>
-                                    <ImgWithStatus isGroup={true} src={activity.groupImg} size={30}
-                                                   altText={activity.groupImg ? null : activity.groupName.replaceAll(" ", "")}/>
+                                <div className={cl.groupWrapper} onClick={() => setActiveGroup(activity.group)}>
+                                    <ImgWithStatus isGroup={true} src={activity.group.img} size={30}
+                                                   altText={activity.group.img ? null : activity.group.name.replaceAll(" ", "")}/>
 
                                     <div className={cl.namingWrapper}>
-                                        <h1>{activity.groupName}</h1>
+                                        <h1>{activity.group.name}</h1>
                                         <p>{activity.channel.name}</p>
                                     </div>
 
-                                    <ImgWithStatus src={activity.img} size={30}/>
+                                    <ImgWithStatus src={activity.friend.img} size={30}/>
                                 </div>
                             </div>)}
                     </div>

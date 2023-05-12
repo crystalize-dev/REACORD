@@ -14,7 +14,7 @@
     background-color: var(--background-color-most-lighter);
     user-select: none;
 
-    z-index: 9999899999;
+    z-index: 9998;
 }
 
 .friend {
@@ -28,6 +28,7 @@
     gap: 20px;
 
     color: var(--darker-white-font-color);
+    white-space: nowrap;
 }
 
 .nameWrapper {
@@ -246,6 +247,7 @@
 .header > span {
     color: var(--darker-white-font-color);
 }
+
 
 @media (max-width: 940px) {
     .toDelete {

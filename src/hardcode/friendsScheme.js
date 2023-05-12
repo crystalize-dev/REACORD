@@ -13,6 +13,7 @@ export const friendsScheme = [
         enterDate: "нояб. 24, 2017",
         img: eugeneAvatar,
         status: 'online',
+        color: "#af421d",
         mutual: {
             friends: null,
             groups: 2,
@@ -35,6 +36,7 @@ export const friendsScheme = [
         enterDate: "янв. 11, 2018",
         img: kirill,
         status: 'sleep',
+        color: "#35322d",
         mutual: {
             friends: 2,
             groups: 2,
@@ -51,6 +53,7 @@ export const friendsScheme = [
         enterDate: "окт. 14, 2020",
         img: null,
         status: 'sleep',
+        color: "#3da35c",
         mutual: {
             friends: 1,
             groups: 2,
@@ -67,6 +70,7 @@ export const friendsScheme = [
         enterDate: "нояб. 27, 2021",
         img: artem,
         status: 'offline',
+        color: "#32110d",
         mutual: {
             friends: null,
             groups: null,
@@ -83,6 +87,7 @@ export const friendsScheme = [
         enterDate: "окт. 09, 2020",
         img: null,
         status: 'offline',
+        color: "#eb4445",
         mutual: {
             friends: 1,
             groups: 1,

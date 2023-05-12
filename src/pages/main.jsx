@@ -43,20 +43,23 @@ const Main = () => {
                       main={mainPage}/>
 
             <Sidebar2 main={me}
-                      active={activeFriend} setActive={setActiveFriend}
+                      activeFriend={activeFriend} setActiveFriend={setActiveFriend}
+                      activeGroup={activeGroup}
                       friends={friends} type={activeGroup.id === 0 ? 'friends' : 'groups'}
                       deleteFriend={deleteFriend}/>
 
             <div className={cl.content}>
                 <Header active={activeFriend} type={activeGroup.id === 0 ? 'friends' : 'groups'}
                         filter={filter} setFilter={setFilter}
-                        msgFilter={msgFilter} setMsgFilter={setMsgFilter}/>
+                        msgFilter={msgFilter} setMsgFilter={setMsgFilter}
+                        activeGroup={activeGroup}/>
 
                 {activeGroup.id === 0 ?
                     <Friends friends={friends} activeFriend={activeFriend}
                              groups={groups}
                              me={me}
-                             filter={filter} msgFilter={msgFilter}/>
+                             filter={filter} msgFilter={msgFilter}
+                             setActiveFriend={setActiveFriend} setActiveGroup={setActiveGroup}/>
                     :
                     <Groups/>
                 }
