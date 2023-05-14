@@ -14,7 +14,7 @@
     background-color: var(--background-color-most-lighter);
     user-select: none;
 
-    z-index: 9998;
+    z-index: 99999999;
 }
 
 .friend {
@@ -237,7 +237,7 @@
 
     background: var(--background-color-most-lighter);
 
-    z-index: 9999;
+    z-index: 999;
 }
 .header hr {
     height: 500%;
@@ -252,5 +252,10 @@
 @media (max-width: 940px) {
     .toDelete {
         display: none;
+    }
+}
+@media (max-width: 812px) {
+    .staticWrapper:before {
+        width: 10px;
     }
 }

@@ -1,4 +1,2 @@
 # ToDo:
-- Groups interface
-
-- Functionality for all
+- small fixes

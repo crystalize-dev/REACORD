@@ -101,6 +101,10 @@
 
     color: var(--darker-white-font-color);
     cursor: pointer;
+    user-select: none;
+}
+.channel > * {
+    pointer-events: none;
 }
 .channel:hover {
     background-color: #35373d;
@@ -122,6 +126,9 @@
 .channel p {
     color: white;
     font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .channel > :nth-child(3) {
     margin-left: auto;
@@ -181,5 +188,57 @@
     color: var(--inactive-color);
 }
 .voice:hover p {
+    color: white;
+}
+
+.gap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.voiceElem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 3px;
+
+    margin-left: auto;
+
+    width: 90%;
+
+    color: var(--inactive-color);
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+.voiceElem:hover {
+    background-color: #35373d;
+    color: white;
+}
+.voiceElem img {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+
+    border-radius: 50%;
+}
+.voiceElem p {
+    font-size: 12px;
+}
+.voiceElem span {
+    margin-left: auto;
+    color: var(--inactive-color);
+
+    transform: scale(0.7);
+}
+.voiceElem span:hover {
+    color: white;
+}
+.voiceElem:last-child {
+    margin-bottom: 10px;
+}
+.activeVoice p {
     color: white;
 }

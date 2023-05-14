@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import cl from "./OnlineFriends.module.css";
-import {getStatusHint} from "../../../utility/status";
-import noActivity from "../../../img/randpics/noActivity.jpg";
-import Icon from "../../../components/icon/Icon";
-import ImgWithStatus from "../../../components/imgWithStatus/imgWithStatus";
+import {getStatusHint} from "../../utility/status";
+import noActivity from "../../img/randpics/noActivity.jpg";
+import Icon from "../icon/Icon";
+import ImgWithStatus from "../imgWithStatus/imgWithStatus";
 
 
 const OnlineFriends = ({filter, friends, groups, setActiveFriend}) => {

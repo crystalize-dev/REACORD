@@ -12,7 +12,7 @@
     height: 100%;
 
     background-color: var(--background-color-darker);
-    z-index: 99999;
+    z-index: 99999998;
 }
 .sidebar input {
     width: 100%;
@@ -119,6 +119,7 @@
 
     display: flex;
     align-items: center;
+    justify-content: center;
     z-index: 99999999999;
 }
 .optionWrapper:hover .optionHint {
@@ -142,9 +143,7 @@
 }
 .optionHint {
     position: absolute;
-    top: -50%;
-    left: 0;
-    transform: translateX(-40%);
+    transform: translateY(calc(-100% - 10px));
 
     display: none;
 
@@ -161,4 +160,150 @@
     border-radius: 5px;
     white-space: nowrap;
     z-index: 99999999999;
+}
+
+.voiceBlock {
+    position: absolute;
+    bottom: 54px;
+    left: 0;
+
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 10px;
+
+    width: 100%;
+    height: 88px;
+    min-height: 88px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    background-color: var(--background-color-most-darker-add);
+    z-index: 99999999999;
+}
+.voiceBlockUpper, .voiceBlockLower {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 48%;
+
+    color: var(--darker-white-font-color);
+}
+.signal {
+    display: flex;
+    flex-direction: column;
+
+    width: 82%;
+}
+.signalName {
+    display: flex;
+    align-items: center;
+    color: #2dc570;
+}
+.signalName h1 {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.signalName span {
+    width: 25px;
+    transform: scale(0.8);
+}
+.signal p {
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.signal p:first-letter {
+    text-transform: uppercase
+}
+
+.voiceOptionWrapper {
+    margin-left: auto;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 4px;
+}
+.voiceOptionWrapper:hover {
+    background-color: #3d3e45;
+}
+.voiceOptionWrapper span {
+    cursor: pointer;
+}
+.voiceOptionWrapper:hover .voiceHint {
+    display: flex;
+}
+.voiceHint::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    bottom: -16px;
+
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top: 8px solid var(--hint-color);
+}
+.voiceHint {
+    position: absolute;
+    transform: translateY(calc(-100% - 10px));
+
+    display: none;
+
+    padding: 8px 10px;
+
+    color: var(--darker-white-font-color);
+    font-weight: 600;
+    font-size: 12px;
+
+    width: fit-content;
+    height: fit-content;
+
+    background-color: var(--hint-color);
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 99999999999;
+}
+
+.voiceBlockLower {
+    padding: 3px;
+    gap: 10px;
+}
+.lowerBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 115%;
+
+    border-radius: 4px;
+    background-color: #313339;
+    cursor: pointer;
+}
+.lowerBlock:hover {
+    background-color: #292b30;
+}
+.lowerBlock span {
+    transform: scale(0.8);
+    font-variation-settings: 'FILL' 1, 'wght' 200;
+}
+.inactive {
+    background-color: #27282e;
+    color: var(--inactive-color);
+}
+
+.lowerBlock:hover .voiceHint {
+    display: flex;
 }

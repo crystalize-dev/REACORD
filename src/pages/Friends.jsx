@@ -1,14 +1,13 @@
 import React from 'react';
-import cl from "./Friends.module.css";
-import SidebarProfile from "../../components/sidebar-profile/sidebar-profile";
-import SidebarActivity from "../../components/sidebar-activity/sidebar-activity";
-import OnlineFriends from "./onlineFriends/OnlineFriends";
-import MessageArea from "./messageArea/messageArea";
+import SidebarProfile from "../components/sidebar-profile/sidebar-profile";
+import SidebarActivity from "../components/sidebar-activity/sidebar-activity";
+import OnlineFriends from "../components/onlineFriends/OnlineFriends";
+import MessageArea from "../components/messageArea/messageArea";
 
 
 const Friends = ({me, groups, friends, activeFriend, filter, msgFilter, setActiveFriend, setActiveGroup}) => {
     return (
-        <div className={cl.messageAreaWrapper}>
+        <>
                 {activeFriend.id === me.id ?
                     <>
                         <OnlineFriends filter={filter}
@@ -21,11 +20,11 @@ const Friends = ({me, groups, friends, activeFriend, filter, msgFilter, setActiv
                     :
                     <>
                         <MessageArea msgFilter={msgFilter}
-                                     activeFriend={activeFriend}/>
+                                     activeFriend={activeFriend} array={activeFriend.messages}/>
 
                         <SidebarProfile active={activeFriend}/>
                     </>}
-            </div>
+            </>
     );
 };
 

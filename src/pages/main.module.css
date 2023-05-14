@@ -12,7 +12,7 @@
     min-height: 50px;
 
     box-shadow: 0 0 1px 1px rgba(0,0,0,0.3);
-    z-index: 999999;
+    z-index: 100000001;
 
     pointer-events: none;
 }
@@ -25,4 +25,12 @@
     height: 100%;
 
     background-color: var(--background-color-most-lighter);
+}
+
+.messageAreaWrapper {
+    width: 100%;
+    height: calc(100% - 50px);
+
+    display: flex;
+    z-index: 9999999;
 }

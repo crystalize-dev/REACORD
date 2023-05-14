@@ -1,7 +1,0 @@
-.messageAreaWrapper {
-    width: 100%;
-    height: calc(100% - 50px);
-
-    display: flex;
-    z-index: 9999999;
-}

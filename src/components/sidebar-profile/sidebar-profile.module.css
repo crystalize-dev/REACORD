@@ -1,4 +1,6 @@
 .sidebar {
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
@@ -7,6 +9,7 @@
     min-width: 340px;
 
     background-color: var(--background-color-most-darker);
+    z-index: -1;
 }
 .colorArea {
     height: 120px;

@@ -1,13 +1,14 @@
 import React from 'react';
 import cl from "./messageElem.module.css";
-import ImgWithStatus from "../../../../components/imgWithStatus/imgWithStatus";
-import Icon from "../../../../components/icon/Icon";
+import ImgWithStatus from "../imgWithStatus/imgWithStatus";
+import Icon from "../icon/Icon";
 import classNames from "classnames";
 import dateFormat from "dateformat";
-import meAvatar from "../../../../img/randpics/avatars/me.jpg";
+import meAvatar from "../../img/randpics/avatars/me.jpg";
+import {friendsScheme} from "../../hardcode/friendsScheme";
 
 
-const MessageElem = ({message, activeFriend, deleteMsg}) => {
+const MessageElem = ({message, activeFriend, deleteMsg, activeChannel}) => {
     const me = {
         name: "Zennitsu",
         img: meAvatar
@@ -18,12 +19,28 @@ const MessageElem = ({message, activeFriend, deleteMsg}) => {
     }
     convertToNormalDate(1683642105960)
 
+    const getDataFromId = (option) => {
+        let result
+
+        if (activeChannel) {
+            result = friendsScheme.filter(friend => friend.name === message.who)[0]
+        } else {
+            result = friendsScheme.filter(friend => friend.id === activeFriend.id)[0]
+        }
+
+        switch (option) {
+            case "img": return result.img
+            case "name": return result.name
+            default: return
+        }
+    }
+
     return (
         <div key={message.date} className={cl.elem}>
-            <ImgWithStatus size={40} src={message.who === 'me' ? me.img : activeFriend.img}/>
+            <ImgWithStatus size={40} src={message.who === 'me' ? me.img : getDataFromId("img")}/>
 
             <div className={cl.textArea}>
-                <h1>{message.who === "me" ? me.name :  activeFriend.name}<span>{convertToNormalDate(message.date)}</span></h1>
+                <h1>{message.who === "me" ? me.name :  getDataFromId("name")}<span>{convertToNormalDate(message.date)}</span></h1>
                 <p>{message.text}</p>
             </div>
 

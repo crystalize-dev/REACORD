@@ -7,7 +7,13 @@ export const groupsScheme = [
         name: 'Троечники из Калифорнии',
         img: null,
         channels: [
-            {id: 1, name: 'оcновной', members: [], type: "text"},
+            {
+                id: 1, name: 'оcновной', members: [], type: "text",
+                messages: [
+                    {who: "me", text: "Даров!", date: 1683642105955},
+                    {who: "Disket", text: "Что?", date: 1683642105956},
+                ]
+            },
             {id: 2, name: 'Оcновной', members: [], type: "voice"}
         ]
     },
@@ -16,11 +22,20 @@ export const groupsScheme = [
         name: 'нони',
         img: null,
         channels: [
-            {id: 1, name: "аниме", members: [4], type: "voice"},
-            {id: 2, name: "Doters", members: [], type: "voice"},
-            {id: 3, name: "афк", members: [], type: "voice"},
-            {id: 4, name: "main", members: [], type: "text"},
-            {id: 5, name: "writing", members: [], type: "text"},
+            {
+                id: 1,
+                name: "main",
+                members: [],
+                type: "text",
+                messages: [
+                    {who: "me", text: "Даров!", date: 1683642105955},
+                    {who: "Overlord", text: "Го дота?", date: 1683642105956},
+                ]
+            },
+            {id: 2, name: "writing", members: [], type: "text", messages: []},
+            {id: 3, name: "аниме", members: [2], type: "voice", messages: []},
+            {id: 4, name: "Doters", members: [], type: "voice", messages: []},
+            {id: 5, name: "афк", members: [], type: "voice", messages: []},
         ]
     },
     {
@@ -28,9 +43,13 @@ export const groupsScheme = [
         name: 'Гремлены',
         img: pic1,
         channels: [
-            {id: 1, name: "Канал для гремленов", members: [1], type: "voice"},
-            {id: 2, name: "Чёрный выход", members: [], type: "voice"},
-            {id: 3, name: "крутой-текст", members: [], type: "text"},
+            {id: 1, name: "крутой-текст", members: [], type: "text", messages: [
+                    {who: "me", text: "Даров!", date: 1683642105955},
+                    {who: "Disket", text: "Прив", date: 1683642105956},
+                    {who: "Overlord", text: "Го дота?", date: 1683642105957},
+                ]},
+            {id: 2, name: "Канал для гремленов", members: [1], type: "voice", messages: []},
+            {id: 3, name: "Чёрный выход", members: [], type: "voice", messages: []},
         ]
     },
 ]

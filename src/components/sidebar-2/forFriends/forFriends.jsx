@@ -5,13 +5,13 @@ import ImgWithStatus from "../../imgWithStatus/imgWithStatus";
 import cl from "./forFriends.module.css"
 
 
-const ForFriends = ({active, main, setActive, deleteFriend, filter, setFilter, friends}) => {
+const ForFriends = ({active, me, setActive, deleteFriend, filter, setFilter, friends}) => {
     return (
         <>
             <input value={filter} onChange={(e) => setFilter(e.target.value)} placeholder={'Найти или начать беседу'}/>
 
-            <div className={active.id === main.id ? classNames(cl.special, cl.current) : cl.special}
-                 onClick={() => setActive(main)}>
+            <div className={active.id === me.id ? classNames(cl.special, cl.current) : cl.special}
+                 onClick={() => setActive(me)}>
                 <Icon>emoji_people</Icon>
                 <p>Друзья</p>
             </div>
