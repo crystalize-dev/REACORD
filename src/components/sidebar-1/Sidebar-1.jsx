@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Icon from "../icon/Icon";
 
 
-const Sidebar1 = ({groups, setGroups, active, setActive, main}) => {
+const Sidebar1 = ({groups, active, setActive, main}) => {
     const getClassForElem = (group) => {
         let result = [cl.imgWrapper]
 

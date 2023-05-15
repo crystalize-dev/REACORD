@@ -30,6 +30,7 @@ const Main = () => {
         messages: []
     }
 
+    // eslint-disable-next-line no-unused-vars
     const [groups, setGroups] = useState(groupsScheme)
     const [activeGroup, setActiveGroup] = useState(mainPage) // ChatsScheme
 
@@ -53,7 +54,7 @@ const Main = () => {
         <div className={cl.wrapper}>
             <div className={cl.headerShadow}/>
 
-            <Sidebar1 groups={groups} setGroups={setGroups}
+            <Sidebar1 groups={groups}
                       active={activeGroup} setActive={setActiveGroup}
                       main={mainPage}/>
 

@@ -3,16 +3,11 @@ import {
     createBrowserRouter, createRoutesFromElements, Route,
     RouterProvider,
 } from "react-router-dom";
-
-
 import Main from "../pages/main";
 
 
-
 const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/" element={<Main />}>
-
-    </Route>
+    <Route path="/" element={<Main />}/>
 ));
 
 const AppRouter = () => {
